@@ -4,37 +4,37 @@
   --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  /* Physics Monster: Pink & Toxic Green Palette */
-  --bg-void: #090c10;
-  --bg-surface: #0e131b;
-  --bg-card: #141b26;
-  --bg-card-hover: #1b2433;
-  --bg-input: #0a0e14;
+  /* Physics Monster: Stone Grey Weave + Pink & Toxic Green Palette */
+  --bg-void: #1c2026;         /* Natural Stone Grey */
+  --bg-surface: #232832;      /* Carved Stone Surface */
+  --bg-card: #2a303c;         /* Stone Tile Slab */
+  --bg-card-hover: #343c4a;   /* Highlighted Stone */
+  --bg-input: #171a20;        /* Inset Stone Groove */
   
-  --border-subtle: #202b3c;
-  --border-medium: #2e3c53;
+  --border-subtle: #384252;   /* Stone Seam */
+  --border-medium: #4a566b;   /* Chiseled Edge */
   
   /* Toxic Green Elements */
   --toxic-green: #00ff66;
   --toxic-bright: #39ff14;
   --toxic-glow: 0 0 15px rgba(0, 255, 102, 0.45);
   --toxic-soft-glow: 0 0 8px rgba(0, 255, 102, 0.25);
-  --toxic-bg-subtle: rgba(0, 255, 102, 0.08);
-  --toxic-border: rgba(0, 255, 102, 0.35);
+  --toxic-bg-subtle: rgba(0, 255, 102, 0.09);
+  --toxic-border: rgba(0, 255, 102, 0.38);
 
   /* Hot Neon Pink Elements */
   --neon-pink: #ff2a85;
   --neon-pink-bright: #ff007f;
   --pink-glow: 0 0 15px rgba(255, 42, 133, 0.45);
   --pink-soft-glow: 0 0 8px rgba(255, 42, 133, 0.25);
-  --pink-bg-subtle: rgba(255, 42, 133, 0.09);
-  --pink-border: rgba(255, 42, 133, 0.35);
+  --pink-bg-subtle: rgba(255, 42, 133, 0.1);
+  --pink-border: rgba(255, 42, 133, 0.38);
 
   /* Typography Colors */
   --text-pure: #ffffff;
-  --text-main: #e2e8f0;
-  --text-muted: #94a3b8;
-  --text-dim: #5c6c82;
+  --text-main: #e5eaf2;
+  --text-muted: #9aa8bc;
+  --text-dim: #64748b;
 
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -58,14 +58,25 @@ body.monster-theme {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Background Cyber Grid */
-.cyber-grid-overlay {
+/* Background: Stone Grey with Weaved Thread Pattern */
+.cyber-grid-overlay,
+.stone-weave-overlay {
   position: fixed;
   inset: 0;
+  background-color: var(--bg-void);
   background-image: 
-    linear-gradient(to right, rgba(0, 255, 102, 0.025) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 42, 133, 0.025) 1px, transparent 1px);
-  background-size: 32px 32px;
+    /* Interlocking woven threads (warp & weft) */
+    linear-gradient(135deg, rgba(0, 0, 0, 0.18) 25%, transparent 25%), 
+    linear-gradient(225deg, rgba(0, 0, 0, 0.18) 25%, transparent 25%), 
+    linear-gradient(45deg, rgba(0, 0, 0, 0.18) 25%, transparent 25%), 
+    linear-gradient(315deg, rgba(0, 0, 0, 0.18) 25%, transparent 25%),
+    /* Micro-fibre diagonal weave */
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.02) 0px, rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 4px),
+    repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.15) 0px, rgba(0, 0, 0, 0.15) 1px, transparent 1px, transparent 4px),
+    /* Subtle natural stone lighting vignette */
+    radial-gradient(circle at 50% 25%, rgba(55, 63, 76, 0.45) 0%, rgba(22, 26, 32, 0.85) 100%);
+  background-position: 8px 0, 8px 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+  background-size: 16px 16px, 16px 16px, 16px 16px, 16px 16px, 6px 6px, 6px 6px, 100% 100%;
   pointer-events: none;
   z-index: 0;
 }
@@ -675,12 +686,15 @@ body.monster-theme {
 /* Callout Blocks (Physics Monster style) */
 .monster-prose blockquote {
   border-left: 3px solid var(--neon-pink);
-  background: linear-gradient(90deg, rgba(255, 42, 133, 0.08) 0%, rgba(20, 27, 38, 0.4) 100%);
+  background: linear-gradient(90deg, rgba(255, 42, 133, 0.12) 0%, rgba(35, 40, 50, 0.75) 100%);
   padding: 1.1rem 1.4rem;
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
   margin-bottom: 1.75rem;
   color: #fce7f3;
   font-size: 0.98rem;
+  border-top: 1px solid rgba(255, 42, 133, 0.15);
+  border-right: 1px solid rgba(255, 42, 133, 0.15);
+  border-bottom: 1px solid rgba(255, 42, 133, 0.15);
 }
 
 .monster-prose hr {
@@ -708,7 +722,7 @@ body.monster-theme {
 }
 
 .monster-prose th {
-  background: #0f151f;
+  background: #1c212a;
   color: var(--toxic-green);
   font-family: var(--font-mono);
   font-weight: 700;
@@ -722,7 +736,7 @@ body.monster-theme {
 
 /* Code & KaTeX Formulas */
 .monster-prose pre {
-  background: #090d13;
+  background: #161920;
   border: 1px solid var(--border-subtle);
   padding: 1.1rem;
   border-radius: var(--radius-sm);
@@ -736,7 +750,7 @@ body.monster-theme {
 .monster-prose code {
   font-family: var(--font-mono);
   font-size: 0.85em;
-  background: #0d121a;
+  background: #1e242d;
   color: var(--toxic-green);
   padding: 0.2em 0.45em;
   border-radius: 3px;
