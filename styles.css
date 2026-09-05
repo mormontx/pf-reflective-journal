@@ -4,37 +4,46 @@
   --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  /* Physics Monster: Authentic Stone Grey Weave + Pink & Toxic Green Palette */
-  --bg-void: #3b424e;         /* Distinct Medium Stone Grey */
-  --bg-surface: #2d333e;      /* Structured Deep Slate for Sidebar */
-  --bg-card: #343b47;         /* Carved Stone Tile Slab */
-  --bg-card-hover: #424a59;   /* Lightened Stone Hover */
-  --bg-input: #262b34;        /* Recessed Stone Groove */
+  /* Theme: Pure White Canvas with Imperial Gold Stripes, Spires & Spirals */
+  --bg-void: #ffffff;
+  --bg-surface: rgba(255, 255, 255, 0.92);
+  --bg-card: #ffffff;
+  --bg-card-hover: #faf7ed;
+  --bg-input: #ffffff;
   
-  --border-subtle: #4f5a6b;   /* Stone Grout / Seam Line */
-  --border-medium: #647287;   /* Chiseled Stone Ridge */
+  --gold-primary: #d4af37;
+  --gold-bright: #ffd700;
+  --gold-dark: #8c6d17;
+  --gold-deep: #70550e;
+  --gold-light: #fef9e7;
+  --gold-border: rgba(212, 175, 55, 0.45);
+  --gold-border-subtle: rgba(212, 175, 55, 0.22);
+  --gold-glow: 0 0 18px rgba(212, 175, 55, 0.35);
+
+  --border-subtle: rgba(212, 175, 55, 0.25);
+  --border-medium: rgba(212, 175, 55, 0.45);
   
   /* Toxic Green Elements */
-  --toxic-green: #00ff66;
-  --toxic-bright: #39ff14;
-  --toxic-glow: 0 0 15px rgba(0, 255, 102, 0.5);
-  --toxic-soft-glow: 0 0 8px rgba(0, 255, 102, 0.3);
-  --toxic-bg-subtle: rgba(0, 255, 102, 0.12);
-  --toxic-border: rgba(0, 255, 102, 0.45);
+  --toxic-green: #00a843;
+  --toxic-bright: #00d655;
+  --toxic-glow: 0 0 12px rgba(0, 168, 67, 0.35);
+  --toxic-soft-glow: 0 0 6px rgba(0, 168, 67, 0.2);
+  --toxic-bg-subtle: rgba(0, 168, 67, 0.08);
+  --toxic-border: rgba(0, 168, 67, 0.4);
 
   /* Hot Neon Pink Elements */
-  --neon-pink: #ff2a85;
-  --neon-pink-bright: #ff007f;
-  --pink-glow: 0 0 15px rgba(255, 42, 133, 0.5);
-  --pink-soft-glow: 0 0 8px rgba(255, 42, 133, 0.3);
-  --pink-bg-subtle: rgba(255, 42, 133, 0.14);
-  --pink-border: rgba(255, 42, 133, 0.45);
+  --neon-pink: #e60067;
+  --neon-pink-bright: #ff1475;
+  --pink-glow: 0 0 12px rgba(230, 0, 103, 0.35);
+  --pink-soft-glow: 0 0 6px rgba(230, 0, 103, 0.2);
+  --pink-bg-subtle: rgba(230, 0, 103, 0.08);
+  --pink-border: rgba(230, 0, 103, 0.4);
 
-  /* Typography Colors */
-  --text-pure: #ffffff;
-  --text-main: #f1f5f9;
-  --text-muted: #cbd5e1;
-  --text-dim: #94a3b8;
+  /* High-Contrast Typography */
+  --text-pure: #0a0f18;
+  --text-main: #1e293b;
+  --text-muted: #475569;
+  --text-dim: #78879b;
 
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -58,24 +67,39 @@ body.monster-theme {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Background: Authentic Stone Grey with Clear Weaved Textile Pattern */
+/* Background: White with Gold Stripes, Spires and Spirals Overlay */
 .cyber-grid-overlay,
-.stone-weave-overlay {
+.stone-weave-overlay,
+.gold-spires-overlay {
   position: fixed;
   inset: 0;
-  background-color: var(--bg-void);
+  background-color: #ffffff;
   background-image: 
-    /* Interlocking woven cloth thread tiles (warp & weft) */
-    linear-gradient(45deg, rgba(0, 0, 0, 0.22) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.22) 75%),
-    linear-gradient(45deg, rgba(0, 0, 0, 0.22) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.22) 75%),
-    /* Perpendicular thread lines */
-    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.08) 0px, rgba(255, 255, 255, 0.08) 1px, transparent 1px, transparent 8px),
-    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.28) 0px, rgba(0, 0, 0, 0.28) 2px, transparent 2px, transparent 8px),
-    /* Diagonal cross-weave threads */
-    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.04) 0px, rgba(255, 255, 255, 0.04) 1px, transparent 1px, transparent 4px),
-    repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.2) 0px, rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 4px);
-  background-position: 0 0, 8px 8px, 0 0, 0 0, 0 0, 0 0;
-  background-size: 16px 16px, 16px 16px, 8px 8px, 8px 8px, 4px 4px, 4px 4px;
+    /* Repeating vertical gilded pinstripes */
+    repeating-linear-gradient(90deg, 
+      transparent 0px, 
+      transparent 116px, 
+      rgba(212, 175, 55, 0.12) 116px, 
+      rgba(255, 215, 0, 0.45) 118px, 
+      rgba(212, 175, 55, 0.12) 120px, 
+      transparent 120px, 
+      transparent 240px
+    ),
+    /* Delicate secondary gold pinstripe */
+    repeating-linear-gradient(90deg,
+      transparent 0px,
+      transparent 58px,
+      rgba(212, 175, 55, 0.06) 58px,
+      rgba(212, 175, 55, 0.18) 59px,
+      transparent 60px,
+      transparent 120px
+    ),
+    /* Vector Spires & Spirals SVG */
+    url("gold-spires-spirals.svg"),
+    /* Soft ambient sunburst from top */
+    radial-gradient(ellipse at 50% 0%, rgba(254, 249, 231, 0.6) 0%, rgba(255, 255, 255, 0.95) 75%);
+  background-position: 0 0, 0 0, center top, 0 0;
+  background-size: 240px 100%, 120px 100%, 360px 360px, 100% 100%;
   pointer-events: none;
   z-index: 0;
 }
@@ -91,7 +115,10 @@ body.monster-theme {
 .sidebar {
   width: 340px;
   background-color: var(--bg-surface);
-  border-right: 1px solid var(--border-subtle);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-right: 2px solid var(--border-medium);
+  box-shadow: 4px 0 20px rgba(212, 175, 55, 0.12);
   display: flex;
   flex-direction: column;
   padding: 1.5rem 1.25rem;
@@ -112,7 +139,7 @@ body.monster-theme {
 .sidebar::-webkit-scrollbar-thumb,
 .modal-body::-webkit-scrollbar-thumb,
 .monster-prose pre::-webkit-scrollbar-thumb {
-  background: var(--border-medium);
+  background: var(--gold-primary);
   border-radius: 3px;
 }
 .sidebar::-webkit-scrollbar-thumb:hover {
@@ -136,9 +163,9 @@ body.monster-theme {
   width: 44px;
   height: 44px;
   border-radius: var(--radius-md);
-  background: linear-gradient(135deg, #1f1026 0%, #0a251a 100%);
-  border: 1px solid var(--neon-pink);
-  box-shadow: var(--pink-glow);
+  background: linear-gradient(135deg, #fff9e6 0%, #f5e4ab 100%);
+  border: 1.5px solid var(--gold-primary);
+  box-shadow: var(--gold-glow);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -151,36 +178,35 @@ body.monster-theme {
 
 @keyframes monsterPulse {
   0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); filter: drop-shadow(0 0 6px var(--toxic-green)); }
+  50% { transform: scale(1.1); filter: drop-shadow(0 0 6px var(--gold-bright)); }
 }
 
 .cyber-tagline {
   font-family: var(--font-mono);
   font-size: 0.65rem;
   font-weight: 700;
-  color: var(--toxic-green);
+  color: var(--gold-dark);
   letter-spacing: 0.12em;
-  text-shadow: var(--toxic-soft-glow);
 }
 
 .brand-title {
   font-family: var(--font-display);
   font-size: 1.35rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-pure);
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
 
 .neon-pink {
   color: var(--neon-pink);
-  text-shadow: var(--pink-soft-glow);
   margin-left: 0.2rem;
 }
 
 .author-terminal {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: #ffffff;
+  border: 1px solid var(--border-medium);
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.12);
   border-radius: var(--radius-sm);
   padding: 0.5rem 0.75rem;
   display: flex;
@@ -195,7 +221,7 @@ body.monster-theme {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.68rem;
 }
 
@@ -223,6 +249,7 @@ body.monster-theme {
   align-items: center;
   gap: 0.3rem;
   transition: color 0.15s ease;
+  font-weight: 600;
 }
 
 .author-handle:hover {
@@ -261,61 +288,63 @@ body.monster-theme {
 
 .btn-toxic-green {
   background: var(--toxic-green);
-  color: #05080c;
-  border-color: var(--toxic-bright);
-  box-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
+  color: #ffffff;
+  border-color: var(--toxic-green);
+  box-shadow: 0 3px 10px rgba(0, 168, 67, 0.3);
 }
 
 .btn-toxic-green:hover {
   background: var(--toxic-bright);
-  box-shadow: var(--toxic-glow);
+  color: #05080c;
+  box-shadow: 0 4px 15px rgba(0, 214, 85, 0.4);
   transform: translateY(-1px);
 }
 
 .btn-pink-outline {
-  background: var(--pink-bg-subtle);
+  background: #ffffff;
   color: var(--neon-pink);
-  border-color: var(--pink-border);
+  border: 1.5px solid var(--neon-pink);
+  box-shadow: 0 2px 8px rgba(230, 0, 103, 0.15);
 }
 
 .btn-pink-outline:hover {
   background: var(--neon-pink);
-  color: #fff;
+  color: #ffffff;
   box-shadow: var(--pink-glow);
-  border-color: var(--neon-pink);
   transform: translateY(-1px);
 }
 
 .btn-edit-neon {
-  background: linear-gradient(135deg, var(--neon-pink) 0%, #cc0066 100%);
-  color: #fff;
-  box-shadow: var(--pink-soft-glow);
+  background: linear-gradient(135deg, var(--neon-pink) 0%, #c40058 100%);
+  color: #ffffff;
+  box-shadow: 0 3px 12px rgba(230, 0, 103, 0.3);
   padding: 0.45rem 0.85rem;
 }
 
 .btn-edit-neon:hover {
-  box-shadow: var(--pink-glow);
+  box-shadow: 0 4px 18px rgba(230, 0, 103, 0.5);
   transform: translateY(-1px);
 }
 
 .btn-cyber-secondary {
-  background: var(--bg-card);
+  background: #ffffff;
   border: 1px solid var(--border-medium);
   color: var(--text-main);
   padding: 0.45rem 0.75rem;
   font-family: var(--font-mono);
   font-size: 0.75rem;
+  box-shadow: 0 1px 4px rgba(212, 175, 55, 0.1);
 }
 
 .btn-cyber-secondary:hover {
-  border-color: var(--toxic-green);
-  color: var(--toxic-green);
+  border-color: var(--gold-primary);
+  color: var(--gold-dark);
 }
 
 .btn-danger-icon {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-dim);
+  background: #ffffff;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
   padding: 0.45rem 0.65rem;
   cursor: pointer;
   border-radius: var(--radius-sm);
@@ -323,9 +352,8 @@ body.monster-theme {
 }
 
 .btn-danger-icon:hover {
-  color: #ff4757;
-  border-color: #ff4757;
-  background: rgba(255, 71, 87, 0.1);
+  color: #ffffff;
+  background: #ef4444;
 }
 
 .btn-ghost {
@@ -335,12 +363,12 @@ body.monster-theme {
 }
 
 .btn-ghost:hover {
-  color: var(--text-main);
-  background: var(--bg-card);
+  color: var(--text-pure);
+  background: var(--gold-light);
 }
 
 .btn-ghost-sm {
-  background: none;
+  background: #ffffff;
   border: 1px solid var(--border-subtle);
   color: var(--text-muted);
   padding: 0.35rem 0.6rem;
@@ -355,8 +383,8 @@ body.monster-theme {
 }
 
 .btn-ghost-sm:hover {
-  border-color: var(--text-muted);
-  color: var(--text-pure);
+  border-color: var(--gold-primary);
+  color: var(--gold-dark);
 }
 
 /* Search Box */
@@ -370,25 +398,25 @@ body.monster-theme {
   left: 0.75rem;
   top: 50%;
   transform: translateY(-50%);
-  color: var(--text-dim);
+  color: var(--gold-primary);
 }
 
 .search-box input {
   width: 100%;
-  padding: 0.5rem 0.75rem 0.5rem 2.2rem;
-  background: var(--bg-input);
-  border: 1px solid var(--border-subtle);
+  padding: 0.55rem 0.75rem 0.55rem 2.2rem;
+  background: #ffffff;
+  border: 1.5px solid var(--border-subtle);
   border-radius: var(--radius-sm);
-  color: var(--text-main);
+  color: var(--text-pure);
   font-family: var(--font-body);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   outline: none;
-  transition: border-color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .search-box input:focus {
-  border-color: var(--toxic-green);
-  box-shadow: 0 0 8px rgba(0, 255, 102, 0.2);
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.25);
 }
 
 /* Nav Sections */
@@ -396,8 +424,8 @@ body.monster-theme {
   font-family: var(--font-mono);
   font-size: 0.65rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--text-dim);
+  letter-spacing: 0.12em;
+  color: var(--gold-dark);
   margin-top: 1.25rem;
   margin-bottom: 0.5rem;
 }
@@ -423,18 +451,19 @@ body.monster-theme {
   display: flex;
   justify-content: space-between;
   font-family: var(--font-body);
+  font-weight: 500;
 }
 
 .filter-btn:hover {
-  color: var(--text-main);
-  background: var(--bg-card);
+  color: var(--text-pure);
+  background: var(--gold-light);
 }
 
 .filter-btn.active {
-  background: var(--toxic-bg-subtle);
-  color: var(--toxic-green);
-  border-color: var(--toxic-border);
-  font-weight: 600;
+  background: linear-gradient(90deg, var(--gold-light) 0%, #ffffff 100%);
+  color: var(--gold-deep);
+  border-color: var(--gold-primary);
+  font-weight: 700;
 }
 
 /* Tag Matrix */
@@ -448,7 +477,7 @@ body.monster-theme {
   font-family: var(--font-mono);
   font-size: 0.68rem;
   padding: 0.2rem 0.5rem;
-  background: var(--bg-card);
+  background: #ffffff;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
   color: var(--text-muted);
@@ -457,15 +486,15 @@ body.monster-theme {
 }
 
 .tag-pill:hover {
-  border-color: var(--neon-pink);
-  color: var(--neon-pink);
+  border-color: var(--gold-primary);
+  color: var(--gold-dark);
 }
 
 .tag-pill.active {
-  background: var(--neon-pink);
-  color: #fff;
-  border-color: var(--neon-pink);
-  box-shadow: var(--pink-soft-glow);
+  background: var(--gold-primary);
+  color: #ffffff;
+  border-color: var(--gold-primary);
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.35);
 }
 
 /* Document Cards */
@@ -477,13 +506,14 @@ body.monster-theme {
 
 .doc-item-card {
   padding: 0.75rem;
-  background: var(--bg-card);
+  background: #ffffff;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 2px 6px rgba(212, 175, 55, 0.06);
 }
 
 .doc-item-card::before {
@@ -498,36 +528,36 @@ body.monster-theme {
 }
 
 .doc-item-card:hover {
-  border-color: var(--border-medium);
+  border-color: var(--gold-primary);
   background: var(--bg-card-hover);
   transform: translateX(2px);
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.15);
 }
 
 .doc-item-card.active {
   border-color: var(--neon-pink);
-  background: linear-gradient(90deg, rgba(255, 42, 133, 0.08) 0%, var(--bg-card) 100%);
-  box-shadow: 0 0 12px rgba(255, 42, 133, 0.2);
+  background: linear-gradient(90deg, rgba(230, 0, 103, 0.06) 0%, #ffffff 100%);
+  box-shadow: 0 0 15px rgba(230, 0, 103, 0.18);
 }
 
 .doc-item-card.active::before {
   background: var(--neon-pink);
-  box-shadow: 0 0 8px var(--neon-pink);
 }
 
 .doc-item-card.type-lesson-design.active::before {
-  background: var(--toxic-green);
-  box-shadow: 0 0 8px var(--toxic-green);
+  background: var(--gold-primary);
 }
 
 .doc-item-card.type-lesson-design.active {
-  border-color: var(--toxic-green);
-  background: linear-gradient(90deg, rgba(0, 255, 102, 0.08) 0%, var(--bg-card) 100%);
+  border-color: var(--gold-primary);
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.1) 0%, #ffffff 100%);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
 }
 
 .doc-item-title {
   font-family: var(--font-display);
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-pure);
   line-height: 1.3;
   margin-bottom: 0.35rem;
@@ -572,7 +602,7 @@ body.monster-theme {
   justify-content: space-between;
   margin-bottom: 2rem;
   padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--border-subtle);
+  border-bottom: 2px solid var(--border-medium);
 }
 
 .header-breadcrumbs {
@@ -595,18 +625,16 @@ body.monster-theme {
   background: var(--pink-bg-subtle);
   color: var(--neon-pink);
   border: 1px solid var(--pink-border);
-  box-shadow: 0 0 8px rgba(255, 42, 133, 0.2);
 }
 
 .badge-green {
-  background: var(--toxic-bg-subtle);
-  color: var(--toxic-green);
-  border: 1px solid var(--toxic-border);
-  box-shadow: 0 0 8px rgba(0, 255, 102, 0.2);
+  background: var(--gold-light);
+  color: var(--gold-deep);
+  border: 1px solid var(--gold-primary);
 }
 
 .breadcrumb-separator {
-  color: var(--text-dim);
+  color: var(--gold-primary);
   font-family: var(--font-mono);
 }
 
@@ -615,6 +643,7 @@ body.monster-theme {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   letter-spacing: 0.05em;
+  font-weight: 600;
 }
 
 .header-tools {
@@ -623,7 +652,7 @@ body.monster-theme {
   gap: 0.5rem;
 }
 
-/* Monster Prose (Markdown Content Styling) */
+/* Monster Prose (Markdown Content Styling on White & Gold) */
 .monster-prose {
   color: var(--text-main);
   font-size: 1.05rem;
@@ -633,7 +662,7 @@ body.monster-theme {
 .monster-prose h1 {
   font-family: var(--font-display);
   font-size: 2.2rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--text-pure);
   margin-bottom: 0.75rem;
@@ -644,12 +673,12 @@ body.monster-theme {
   font-family: var(--font-display);
   font-size: 1.45rem;
   font-weight: 700;
-  color: var(--toxic-green);
+  color: var(--gold-deep);
   letter-spacing: -0.01em;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
   padding-bottom: 0.4rem;
-  border-bottom: 1px solid var(--border-subtle);
+  border-bottom: 2px solid var(--gold-primary);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -678,40 +707,42 @@ body.monster-theme {
 }
 
 .monster-prose strong {
-  color: #fff;
-  font-weight: 600;
+  color: var(--text-pure);
+  font-weight: 700;
 }
 
-/* Callout Blocks (Physics Monster style) */
+/* Callout Blocks (Physics Monster style on White/Gold) */
 .monster-prose blockquote {
-  border-left: 3px solid var(--neon-pink);
-  background: linear-gradient(90deg, rgba(255, 42, 133, 0.12) 0%, rgba(35, 40, 50, 0.75) 100%);
+  border-left: 4px solid var(--gold-primary);
+  background: linear-gradient(90deg, rgba(254, 249, 231, 0.8) 0%, rgba(255, 255, 255, 0.95) 100%);
+  border-top: 1px solid var(--border-subtle);
+  border-right: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
   padding: 1.1rem 1.4rem;
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
   margin-bottom: 1.75rem;
-  color: #fce7f3;
+  color: var(--text-pure);
   font-size: 0.98rem;
-  border-top: 1px solid rgba(255, 42, 133, 0.15);
-  border-right: 1px solid rgba(255, 42, 133, 0.15);
-  border-bottom: 1px solid rgba(255, 42, 133, 0.15);
+  box-shadow: 0 3px 12px rgba(212, 175, 55, 0.08);
 }
 
 .monster-prose hr {
   border: none;
-  border-top: 1px solid var(--border-subtle);
+  border-top: 1.5px solid var(--border-subtle);
   margin: 2.5rem 0;
 }
 
-/* Tables (Sci-Fi Matrix) */
+/* Tables (White & Gold Data Matrix) */
 .monster-prose table {
   width: 100%;
   border-collapse: collapse;
   margin: 1.75rem 0;
   font-size: 0.9rem;
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: #ffffff;
+  border: 1.5px solid var(--gold-primary);
   border-radius: var(--radius-sm);
   overflow: hidden;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1);
 }
 
 .monster-prose th, .monster-prose td {
@@ -721,22 +752,23 @@ body.monster-theme {
 }
 
 .monster-prose th {
-  background: #1c212a;
-  color: var(--toxic-green);
+  background: linear-gradient(180deg, #fefbf0 0%, #faecc5 100%);
+  color: var(--gold-deep);
   font-family: var(--font-mono);
   font-weight: 700;
   letter-spacing: 0.05em;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
+  border-bottom: 2px solid var(--gold-primary);
 }
 
 .monster-prose tr:hover td {
-  background: var(--bg-card-hover);
+  background: var(--gold-light);
 }
 
 /* Code & KaTeX Formulas */
 .monster-prose pre {
-  background: #161920;
-  border: 1px solid var(--border-subtle);
+  background: #fdfbf7;
+  border: 1.5px solid var(--border-medium);
   padding: 1.1rem;
   border-radius: var(--radius-sm);
   overflow-x: auto;
@@ -744,24 +776,27 @@ body.monster-theme {
   font-size: 0.85rem;
   margin-bottom: 1.5rem;
   color: var(--toxic-green);
+  box-shadow: inset 0 1px 4px rgba(212, 175, 55, 0.08);
 }
 
 .monster-prose code {
   font-family: var(--font-mono);
   font-size: 0.85em;
-  background: #1e242d;
+  background: #fdfbf7;
   color: var(--toxic-green);
   padding: 0.2em 0.45em;
   border-radius: 3px;
-  border: 1px solid rgba(0, 255, 102, 0.2);
+  border: 1px solid var(--border-subtle);
+  font-weight: 600;
 }
 
 /* KaTeX Display Equations */
 .katex-display {
-  background: var(--bg-card);
+  background: #ffffff;
   padding: 1rem;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--border-subtle);
+  border: 1.5px solid var(--border-medium);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1);
   margin: 1.5rem 0 !important;
   overflow-x: auto;
 }
@@ -770,7 +805,7 @@ body.monster-theme {
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(5, 8, 13, 0.85);
+  background: rgba(15, 23, 42, 0.6);
   backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
@@ -784,22 +819,22 @@ body.monster-theme {
 }
 
 .monster-modal {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-medium);
+  background: #ffffff;
+  border: 2px solid var(--gold-primary);
   border-radius: var(--radius-lg);
   width: 100%;
   max-width: 880px;
   max-height: 92vh;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), var(--pink-soft-glow);
+  box-shadow: 0 20px 50px rgba(180, 140, 20, 0.25), var(--gold-glow);
   overflow: hidden;
 }
 
 .modal-header {
   padding: 1.25rem 1.5rem;
-  border-bottom: 1px solid var(--border-subtle);
-  background: var(--bg-card);
+  border-bottom: 1.5px solid var(--border-medium);
+  background: #fefdfa;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -809,15 +844,15 @@ body.monster-theme {
   font-family: var(--font-mono);
   font-size: 0.65rem;
   font-weight: 700;
-  color: var(--neon-pink);
-  letter-spacing: 0.1em;
+  color: var(--gold-dark);
+  letter-spacing: 0.12em;
 }
 
 .modal-title {
   font-family: var(--font-display);
   font-size: 1.25rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-pure);
 }
 
 .modal-close-btn {
@@ -836,6 +871,7 @@ body.monster-theme {
 .modal-body {
   padding: 1.5rem;
   overflow-y: auto;
+  background: #ffffff;
 }
 
 .form-grid {
@@ -855,7 +891,7 @@ body.monster-theme {
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.05em;
-  color: var(--text-muted);
+  color: var(--gold-deep);
   margin-bottom: 0.4rem;
 }
 
@@ -863,8 +899,8 @@ body.monster-theme {
   width: 100%;
   padding: 0.65rem 0.85rem;
   border-radius: var(--radius-sm);
-  background: var(--bg-input);
-  border: 1px solid var(--border-subtle);
+  background: #ffffff;
+  border: 1.5px solid var(--border-subtle);
   color: var(--text-pure);
   font-family: inherit;
   font-size: 0.88rem;
@@ -873,8 +909,8 @@ body.monster-theme {
 }
 
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-  border-color: var(--neon-pink);
-  box-shadow: 0 0 8px rgba(255, 42, 133, 0.25);
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.25);
 }
 
 .form-group textarea {
@@ -890,7 +926,7 @@ body.monster-theme {
   align-items: center;
   flex-wrap: wrap;
   gap: 0.4rem;
-  background: var(--bg-card);
+  background: #fdfbf7;
   padding: 0.5rem 0.75rem;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
@@ -901,25 +937,27 @@ body.monster-theme {
   font-family: var(--font-mono);
   font-size: 0.65rem;
   font-weight: 700;
-  color: var(--text-dim);
+  color: var(--gold-dark);
   margin-right: 0.25rem;
 }
 
 .snippet-btn {
-  background: #0e141d;
+  background: #ffffff;
   border: 1px solid var(--border-subtle);
-  color: var(--text-muted);
+  color: var(--text-main);
   padding: 0.25rem 0.55rem;
   font-size: 0.72rem;
   font-family: var(--font-mono);
   border-radius: 3px;
   cursor: pointer;
   transition: all 0.15s ease;
+  font-weight: 600;
 }
 
 .snippet-btn:hover {
-  border-color: var(--toxic-green);
-  color: var(--toxic-green);
+  border-color: var(--gold-primary);
+  color: var(--gold-dark);
+  background: var(--gold-light);
 }
 
 /* Editor Tabs */
@@ -934,7 +972,7 @@ body.monster-theme {
   border: none;
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-dim);
   padding: 0.4rem 0.75rem;
   cursor: pointer;
@@ -942,12 +980,12 @@ body.monster-theme {
 }
 
 .editor-tab-btn.active {
-  color: var(--neon-pink);
-  border-color: var(--neon-pink);
+  color: var(--gold-deep);
+  border-color: var(--gold-primary);
 }
 
 .preview-box {
-  background: var(--bg-card);
+  background: #ffffff;
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
   padding: 1.5rem;

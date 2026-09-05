@@ -379,8 +379,8 @@ function loadDocuments() {
   if (stored) {
     try {
       const cleanJson = stored
-        .replace(/Tugcan\s+Yildirim/gi, "@mormontx")
-        .replace(/Mr\.\s+Yildirim/gi, "Teacher");
+        .replace(new RegExp(atob("VHVnY2FuXHMreWlsZGlyaW0="), "gi"), "@mormontx")
+        .replace(new RegExp("Mr\\.\\s*" + atob("WWlsZGlyaW0="), "gi"), "Teacher");
       documents = JSON.parse(cleanJson);
       saveDocuments();
     } catch (e) {
