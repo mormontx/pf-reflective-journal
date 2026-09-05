@@ -378,7 +378,11 @@ function loadDocuments() {
   const stored = localStorage.getItem("physics_monster_pf_docs");
   if (stored) {
     try {
-      documents = JSON.parse(stored);
+      const cleanJson = stored
+        .replace(/Tugcan\s+Yildirim/gi, "@mormontx")
+        .replace(/Mr\.\s+Yildirim/gi, "Teacher");
+      documents = JSON.parse(cleanJson);
+      saveDocuments();
     } catch (e) {
       console.error("Storage parse error", e);
       documents = [...DEFAULT_DOCUMENTS];
