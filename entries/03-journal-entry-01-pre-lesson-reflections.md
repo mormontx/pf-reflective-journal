@@ -1,6 +1,6 @@
 # Reflective Journal Entry #01: Preparing the Productive Failure Shift
 **Date:** 2026-09-06  
-**Author:** Tugcan Yildirim (@mormontx)  
+**Author:** @mormontx  
 **Context:** Launching Term 1 with Year 11 (Edexcel IGCSE Forces) and Year 12 (IB DP Kinematics)  
 **Tags:** `#ProductiveFailure`, `#ReflectionInAction`, `#IGCSE-Y11`, `#IB-Y12`, `#ThresholdConcepts`
 
@@ -21,7 +21,7 @@ This term, I am embracing Manu Kapur's **Productive Failure (PF)** architecture.
 Donald Schön highlights that professionals operate with deeply ingrained tacit repertoires. My biggest personal hurdle as a teacher will not be designing the task—it will be **holding back my urge to rescue**.
 
 When a student looks up at me with genuine distress saying:
-> *"Mr. Yildirim, Group 2 says the speed is 15 m/s and we got 21 m/s, which one is right?"*
+> *"Sir, Group 2 says the speed is 15 m/s and we got 21 m/s, which one is right?"*
 
 My instinct is to explain secant lines and show them the formula. In PF, doing so short-circuits the cognitive activation process.
 

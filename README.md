@@ -1,5 +1,5 @@
 # Productive Failure (PF) & Reflective Practice Lab
-> **Author:** Tugcan Yildirim ([@mormontx](https://github.com/mormontx))  
+> **Author:** [@mormontx](https://github.com/mormontx)  
 > **Classes:** Edexcel IGCSE Physics (Y11) & IB DP Physics (Y12)  
 > **Framework:** Manu Kapur's Productive Failure + Donald Schön's Reflective Practitioner
 
@@ -27,7 +27,7 @@ To deploy this site live to `https://mormontx.github.io/pf-reflective-journal`:
 In your terminal, run:
 
 ```bash
-cd /Users/tugcanyildirim/projects/pf-reflective-journal
+cd ~/projects/pf-reflective-journal
 git init
 git add .
 git commit -m "feat: initial PF lesson designs for IGCSE Y11 and IB Y12 with reflective journal app"
@@ -53,10 +53,10 @@ git push -u origin main
 To view and edit the journal on your local Mac right now:
 
 ```bash
-cd /Users/tugcanyildirim/projects/pf-reflective-journal
-python3 -m http.server 8000
+cd ~/projects/pf-reflective-journal
+python3 -m http.server 8085
 ```
-Then open [http://localhost:8000](http://localhost:8000) in your browser.
+Then open [http://localhost:8085](http://localhost:8085) in your browser.
 
 ---
 

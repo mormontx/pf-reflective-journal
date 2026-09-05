@@ -179,7 +179,7 @@ Bring 3 student boards to the front rail to contrast:
     date: "2026-09-06",
     tags: ["#ProductiveFailure", "#DonaldSchön", "#ReflectionInAction", "#TeacherGrowth", "#PedagogicalItch"],
     content: `# Reflective Journal Entry #01: Navigating the Pedagogical Itch
-**Author:** Tugcan Yildirim (@mormontx)  
+**Author:** @mormontx  
 **Cohort:** Y11 Edexcel IGCSE & Y12 IB DP Physics  
 **Framework:** Donald Schön's Reflection-in-Action & Manu Kapur's Productive Failure  
 
@@ -529,7 +529,7 @@ btnNewEntry.addEventListener("click", () => {
     date: new Date().toISOString().split("T")[0],
     tags: ["#ProductiveFailure", "#ReflectionInAction"],
     content: `# Reflective Journal Entry
-**Author:** Tugcan Yildirim (@mormontx)  
+**Author:** @mormontx  
 **Cohort:** [Cohort]  
 **Topic:** [Topic]  
 
