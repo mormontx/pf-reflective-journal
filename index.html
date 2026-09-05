@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productive Failure & Reflective Practice — Tugcan Yildirim</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <!-- KaTeX for Math Equations -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+  
+  <!-- Marked.js for Markdown Rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@9.1.2/marked.min.js"></script>
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-light">
+  <div class="app-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="brand">
+          <div class="brand-avatar">⚛</div>
+          <div>
+            <h1 class="brand-title">Reflective Lab</h1>
+            <p class="brand-subtitle">Productive Failure in Physics</p>
+          </div>
+        </div>
+        <div class="author-badge">
+          <span>Tugcan Yildirim</span>
+          <a href="https://github.com/mormontx" target="_blank" rel="noopener noreferrer" class="github-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            @mormontx
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="sidebar-actions">
+        <button id="btn-new-entry" class="btn btn-primary btn-block">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          New Reflection Entry
+        </button>
+      </div>
+
+      <!-- Navigation & Document List -->
+      <nav class="sidebar-nav">
+        <div class="nav-section-title">CATEGORIES</div>
+        <ul class="nav-filter-list">
+          <li><button class="filter-btn active" data-filter="all">All Documents (<span id="count-all">0</span>)</button></li>
+          <li><button class="filter-btn" data-filter="lesson-design">PF Lesson Designs (<span id="count-lessons">0</span>)</button></li>
+          <li><button class="filter-btn" data-filter="journal-entry">Reflective Journals (<span id="count-journals">0</span>)</button></li>
+        </ul>
+
+        <div class="nav-section-title">TAGS</div>
+        <div id="tag-cloud" class="tag-cloud">
+          <!-- Populated by JS -->
+        </div>
+
+        <div class="nav-section-title">DOCUMENT INDEX</div>
+        <div id="document-list" class="document-list">
+          <!-- Populated by JS -->
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button id="theme-toggle" class="btn btn-ghost btn-sm">
+          <span class="theme-icon">🌓</span> Toggle Theme
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <header class="content-header">
+        <div class="header-breadcrumbs">
+          <span id="doc-type-badge" class="badge">Lesson Design</span>
+          <span class="breadcrumb-separator">/</span>
+          <span id="doc-date" class="doc-meta-date">Term 1, 2026</span>
+        </div>
+        <div class="header-tools">
+          <button id="btn-copy-markdown" class="btn btn-secondary btn-sm" title="Copy Raw Markdown">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            Copy Markdown
+          </button>
+          <button id="btn-export-pdf" class="btn btn-secondary btn-sm" onclick="window.print()" title="Print or Save PDF">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+            Export
+          </button>
+        </div>
+      </header>
+
+      <!-- Viewer Container -->
+      <article id="article-viewer" class="article-viewer prose">
+        <!-- Rendered markdown inserted here -->
+      </article>
+    </main>
+  </div>
+
+  <!-- Modal: New Reflection Entry -->
+  <div id="modal-new-entry" class="modal-overlay hidden">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <h2 class="modal-title">New Reflective Journal Entry</h2>
+          <p class="modal-subtitle">Donald Schön's Reflection-in-Action & Reflection-on-Action framework</p>
+        </div>
+        <button id="btn-close-modal" class="btn-icon">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="form-entry">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="entry-title">Title</label>
+              <input type="text" id="entry-title" placeholder="e.g. Y11 Forces: Navigating the Inertia Panic" required>
+            </div>
+            <div class="form-group">
+              <label for="entry-date">Date</label>
+              <input type="date" id="entry-date" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="entry-course">Course / Class</label>
+              <select id="entry-course">
+                <option value="Edexcel IGCSE Y11">Edexcel IGCSE Physics (Year 11)</option>
+                <option value="IB DP Y12">IB DP Physics (Year 12)</option>
+                <option value="General Pedagogical Reflection">General Pedagogical Reflection</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="entry-tags">Tags (comma separated)</label>
+              <input type="text" id="entry-tags" value="#ProductiveFailure, #ReflectionOnAction, #Forces">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="label-with-hint">
+              <label for="entry-body">Reflection Content (Markdown & KaTeX Supported)</label>
+              <button type="button" id="btn-insert-template" class="btn-link">Insert Schön PF Template</button>
+            </div>
+            <textarea id="entry-body" rows="14" placeholder="Write your reflection here..."></textarea>
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" id="btn-download-md" class="btn btn-secondary">Download as .md file</button>
+            <div class="action-spacer"></div>
+            <button type="button" id="btn-cancel-modal" class="btn btn-ghost">Cancel</button>
+            <button type="submit" class="btn btn-primary">Save to Live Journal</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
